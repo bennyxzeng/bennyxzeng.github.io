@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Benjamin Zeng</title>
+<meta name="description" content="Benjamin Zeng is a computer science student at the University of Washington who builds mobile apps and tools with Flutter, Dart, Python and Java.">
+<meta property="og:title" content="Benjamin Zeng">
+<meta property="og:description" content="Computer science student at the University of Washington who builds mobile apps.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap">
+<style>
+/* Hallmark · shape: kept · genre: modern-minimal · theme: Console (deal 1/3, seed portfolio-computer-science-student-bf17·f87fe9e1·2026-11-14·r0) · redesign: restyle
+ * hero: kept · nav: kept, a wordmark and four section links over one hairline · footer: kept, one line of name and two profile links · imagery: the product, Loremark's own banner and the two app icons · signature: Loremark's benchmark set as a reading, 500,000+ words in under 0.2 s · console: graphite
+ * axes: dark/grotesk-sans/aqua and coral by request · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P3 H4 E4 S4 R4 V3 · weakest: P, a resume page argues little; led the projects with the one measured result instead of adjectives */
+/* Hallmark · reworded "I'm a software developer focused on mobile apps, full-stack development, and applied AI. I build with Flutter, Dart, Python, and Java, and I've led a six-person team from idea to a working beta." to "Computer science student at the University of Washington who builds mobile apps." · 58 names the hero budget, and each fact cut still stands in the record, the projects and the skills */
+/* Hallmark · dropped "The default keybinds." · 69 names it, the table head now says it */
+@import url("./tokens.css");
+@import url("./base.css");
+
+:root { --radius-chip: 4px; }
+
+.container {
+  padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
+}
+main { display: block; }
+ul, ol, dl, dd, figure, table { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+a { transition: color var(--dur-short) var(--ease-out), text-decoration-color var(--dur-short) var(--ease-out); }
+a:hover { color: var(--color-accent); }
+a:active { color: var(--color-ink-2); }
+.prose-link { text-decoration-color: var(--color-rule-2); }
+.prose-link:hover { text-decoration-color: var(--color-accent); }
+
+.skip { position: absolute; left: var(--space-md); top: var(--space-md); z-index: var(--z-modal); padding: var(--space-sm) var(--space-md); background: var(--color-accent); color: var(--color-accent-ink); border-radius: var(--radius-pill); transform: translateY(-200%); }
+.skip:focus-visible { transform: none; }
+.skip:hover { color: var(--color-accent-ink); }
+
+/* Nav: a wordmark and four links over one hairline */
+.site-head { padding-top: var(--space-md); }
+.bar {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-xs) var(--space-lg);
+  padding-bottom: var(--space-xs); border-bottom: var(--rule-hair) solid var(--color-rule);
+}
+.wordmark { display: inline-flex; align-items: center; min-height: 44px; font-size: var(--text-lg); font-weight: 500; letter-spacing: var(--tracking-display); text-decoration: none; white-space: nowrap; }
+.bar nav { display: flex; flex-wrap: wrap; gap: 0 var(--space-lg); }
+.bar nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: var(--text-sm); font-weight: 500; color: var(--color-ink-2); text-decoration: none; white-space: nowrap; }
+.bar nav a:hover { color: var(--color-accent); }
+
+/* Hero */
+.hero { padding-block: var(--space-3xl) var(--space-2xl); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--space-2xl) var(--gap-columns); align-items: start; }
+.hero-copy { display: flex; flex-direction: column; gap: var(--space-lg); min-width: 0; }
+.lead { color: var(--color-ink-2); }
+.actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 var(--space-lg);
+  border: var(--rule-hair) solid var(--color-rule-2); border-radius: var(--radius-pill);
+  background: var(--color-paper-2); color: var(--color-ink);
+  font: 500 var(--text-md)/1 var(--font-body); white-space: nowrap; text-decoration: none; cursor: pointer;
+  transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out);
+}
+.btn:hover { background: var(--color-paper-3); border-color: var(--color-muted); color: var(--color-ink); }
+.btn:active { transform: translateY(1px); }
+.btn:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.btn[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; transform: none; }
+.btn--primary { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-accent-ink); }
+.btn--primary:hover { background: var(--color-ink); border-color: var(--color-ink); color: var(--color-accent-ink); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: background-color var(--dur-short) linear; } .btn:active { transform: none; } }
+
+/* The record: label and value rows cut from one surface */
+.record { background: var(--color-paper-2); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-card); overflow: hidden; }
+.record > div { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: var(--space-md); align-items: center; padding: var(--space-md) var(--space-lg); }
+.record .links { display: flex; flex-wrap: wrap; gap: 0 var(--space-lg); padding-block: 0; }
+.record > div:has(.links) { padding-block: var(--space-2xs); }
+.record > div + div { border-top: var(--rule-hair) solid var(--color-rule); }
+.record dt { font-size: var(--text-sm); font-weight: 500; color: var(--color-muted); }
+.record dd { color: var(--color-ink); }
+.measured { font-family: var(--font-outlier); font-size: var(--text-sm); font-variant-numeric: tabular-nums slashed-zero; }
+
+/* Sections */
+.section { padding-block: var(--section-gap-s) 0; }
+.section > .container > h2 { margin-bottom: var(--space-xl); }
+.split { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); gap: var(--space-xl) var(--gap-columns); }
+.split > h2 { margin-bottom: 0; }
+
+/* Projects: one surface, 1px seams */
+.panels {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--rule-hair);
+  background: var(--color-rule); color: var(--color-ink); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-card); overflow: hidden;
+}
+.panels > * { background: var(--color-paper-2); color: var(--color-ink); min-width: 0; }
+.lead-art { grid-column: 1 / -1; background: var(--color-paper-3); }
+.lead-art img { width: 100%; aspect-ratio: 3 / 1; object-fit: cover; }
+.panel { display: flex; flex-direction: column; gap: var(--space-md); padding: var(--space-xl); }
+.panel-head { display: flex; align-items: center; gap: var(--space-md); }
+.panel-head img { width: 3.25rem; height: 3.25rem; border-radius: var(--radius-card); flex-shrink: 0; }
+.panel p, .row p { color: var(--color-ink-2); }
+.panel .tagline { color: var(--color-muted); font-size: var(--text-sm); }
+.panel .role { color: var(--color-accent); font-size: var(--text-sm); font-weight: 500; }
+.row .sub { color: var(--color-muted); }
+.points { display: flex; flex-direction: column; gap: var(--space-xs); list-style: disc outside; color: var(--color-ink-2); max-width: 65ch; }
+.points li::marker { color: var(--color-muted); }
+.stack { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
+.stack li { font-size: var(--text-sm); font-weight: 500; color: var(--color-ink-2); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-chip); padding: var(--space-3xs) var(--space-xs); }
+.repo { margin-top: auto; font-weight: 500; }
+.repo a, .site-foot a, .record a { display: inline-flex; align-items: center; min-height: 44px; }
+
+/* Readings: what was measured, in the measured face */
+.readings { display: flex; flex-direction: column; }
+.readings > div { display: flex; flex-direction: column; gap: var(--space-2xs); padding: var(--space-xl); }
+.readings > div + div { border-top: var(--rule-hair) solid var(--color-rule); }
+.reading { font-family: var(--font-outlier); font-weight: 400; letter-spacing: -0.04em; line-height: 1; color: var(--color-ink); font-variant-numeric: tabular-nums slashed-zero; font-size: var(--text-2xl); }
+.reading--lead { font-size: var(--text-section); }
+.readings dd { color: var(--color-muted); font-size: var(--text-sm); }
+
+.binds { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+.binds th { text-align: left; font-weight: 500; color: var(--color-muted); padding: var(--space-xs) 0; border-bottom: var(--rule-hair) solid var(--color-rule); }
+.binds td { padding: var(--space-xs) 0; border-bottom: var(--rule-hair) solid var(--color-rule); color: var(--color-ink-2); vertical-align: middle; }
+.binds tr:last-child td { border-bottom: 0; }
+.binds td:first-child { white-space: nowrap; padding-right: var(--space-md); }
+kbd {
+  display: inline-block; font-family: var(--font-outlier); font-size: var(--text-xs); font-weight: 500; color: var(--color-ink);
+  background: var(--color-paper-3); border: var(--rule-hair) solid var(--color-rule-2); border-radius: var(--radius-chip);
+  padding: var(--space-3xs) var(--space-xs); margin-right: var(--space-2xs);
+}
+
+/* Resume rows: whitespace and hairlines, no panels */
+.rows { display: flex; flex-direction: column; min-width: 0; }
+.row { display: flex; flex-direction: column; gap: var(--space-xs); padding-block: var(--space-lg); border-top: var(--rule-hair) solid var(--color-rule); }
+.row:last-child { border-bottom: var(--rule-hair) solid var(--color-rule); }
+.row-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-2xs) var(--space-lg); }
+.row-title { display: flex; align-items: center; gap: var(--space-md); min-width: 0; }
+.row-title img { width: 3.25rem; height: 3.25rem; border-radius: var(--radius-card); flex-shrink: 0; }
+.when { color: var(--color-muted); font-size: var(--text-sm); white-space: nowrap; }
+.sub { color: var(--color-muted); }
+
+.skills > div { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: var(--space-xs) var(--space-lg); padding-block: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); }
+.skills > div:last-child { border-bottom: var(--rule-hair) solid var(--color-rule); }
+.skills dt { font-size: var(--text-sm); font-weight: 500; color: var(--color-muted); }
+.skills dd { color: var(--color-ink); }
+
+.site-foot { margin-top: var(--section-gap-s); padding-block: var(--space-xl); border-top: var(--rule-hair) solid var(--color-rule); }
+.site-foot .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-sm) var(--space-lg); color: var(--color-muted); font-size: var(--text-sm); }
+.site-foot ul { display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-lg); }
+
+@media (max-width: 60rem) {
+  .hero { padding-block: var(--space-2xl) var(--space-xl); }
+  .hero-grid, .split { grid-template-columns: minmax(0, 1fr); }
+  .split { gap: var(--space-lg); }
+  .panels { grid-template-columns: minmax(0, 1fr); }
+  .panel, .readings > div { padding: var(--space-lg); }
+  .lead-art img { aspect-ratio: 2 / 1; object-position: 85% center; }
+}
+@media (max-width: 40rem) {
+  .rows .points { list-style: none; }
+  .skills > div { grid-template-columns: minmax(0, 1fr); }
+  .record > div { grid-template-columns: 6rem minmax(0, 1fr); padding: var(--space-md); }
+}
+
+/* Motion and colour, added at the owner's request. This goes past the Console theme's "nothing moves" rule on purpose. */
+:root {
+  --color-loremark: oklch(82% 0.12 95); --color-keyify: oklch(80% 0.2 150); --color-memoize: oklch(78% 0.1 200);
+  --glow-size: 38rem;
+}
+html { scroll-behavior: smooth; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: var(--z-sticky-nav); background: var(--color-paper); }
+
+/* Sticky nav with a scroll progress line and the current section lit */
+.site-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: var(--z-sticky-nav); background: color-mix(in oklab, var(--color-paper) 78%, transparent); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+.bar { position: relative; }
+.progress { position: absolute; left: 0; right: 0; bottom: calc(-1 * var(--rule-hair)); height: var(--space-3xs); background: var(--color-accent); transform: scaleX(0); transform-origin: left; }
+.bar nav a { position: relative; }
+.bar nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: var(--space-xs); height: var(--space-3xs); background: var(--color-accent); transform: scaleX(0); transform-origin: left; transition: transform var(--dur-short) var(--ease-out); }
+.bar nav a:hover::after, .bar nav a[aria-current="true"]::after { transform: scaleX(1); }
+.bar nav a[aria-current="true"] { color: var(--color-accent); }
+
+/* Hero: drifting colour behind a dot grid, a staggered entrance, a sheen across the name */
+.hero { position: relative; isolation: isolate; }
+.glow { position: absolute; inset: calc(-1 * var(--space-3xl)) 0 calc(-1 * var(--space-3xl)); z-index: -1; overflow: hidden; pointer-events: none; -webkit-mask-image: linear-gradient(to bottom, transparent 0, var(--color-ink) 22%, var(--color-ink) 55%, transparent 100%); mask-image: linear-gradient(to bottom, transparent 0, var(--color-ink) 22%, var(--color-ink) 55%, transparent 100%); }
+.glow span { position: absolute; width: var(--glow-size); height: var(--glow-size); border-radius: 50%; filter: blur(90px); opacity: 0.2; animation: drift 16s var(--ease-in-out) infinite alternate; }
+.glow span:nth-of-type(1) { background: var(--color-accent); left: -8rem; top: -10rem; }
+.glow span:nth-of-type(2) { background: var(--color-cool); right: -6rem; top: 4rem; animation-duration: 21s; animation-delay: -8s; }
+.stars { position: absolute; inset: 0; width: 100%; height: 100%; }
+@keyframes drift { to { transform: translate3d(7rem, 3rem, 0) scale(1.18); } }
+
+.hero-copy > *, .record > div { animation: rise 0.8s var(--ease-out) both; animation-delay: calc(var(--i, 0) * 80ms + 80ms); }
+.hero-copy > :nth-child(2) { --i: 1; } .hero-copy > :nth-child(3) { --i: 2; }
+.record > :nth-child(1) { --i: 2; } .record > :nth-child(2) { --i: 3; } .record > :nth-child(3) { --i: 4; } .record > :nth-child(4) { --i: 5; } .record > :nth-child(5) { --i: 6; } .record > :nth-child(6) { --i: 7; } .record > :nth-child(7) { --i: 8; }
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } }
+
+.hero h1 {
+  background: linear-gradient(100deg, var(--color-ink) 0%, var(--color-accent) 24%, var(--color-ink) 50%, var(--color-cool) 74%, var(--color-ink) 100%);
+  background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 0 28px color-mix(in oklab, var(--color-accent) 32%, transparent));
+  animation: rise 0.8s var(--ease-out) both, flow 9s linear infinite;
+}
+@keyframes flow { from { background-position: 0% 0; } to { background-position: 150% 0; } }
+
+.builds { display: block; margin-top: var(--space-xs); color: var(--color-ink); font-weight: 500; min-height: 1.45em; }
+.rotator { color: var(--color-accent); }
+.caret { display: inline-block; width: var(--space-3xs); height: 1em; margin-left: var(--space-3xs); vertical-align: -0.12em; background: var(--color-accent); animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+.btn { transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out), box-shadow var(--dur-short) var(--ease-out); }
+.btn:hover { transform: translateY(-2px); }
+.btn--primary { box-shadow: 0 8px 28px -12px var(--color-accent); }
+.btn--linkedin { background: var(--color-linkedin); border-color: var(--color-linkedin); color: var(--color-ink); box-shadow: 0 8px 28px -14px var(--color-linkedin-2); }
+.btn--linkedin:hover { background: var(--color-linkedin-2); border-color: var(--color-linkedin-2); color: var(--color-ink); box-shadow: 0 14px 36px -12px var(--color-linkedin-2); }
+.btn--primary:hover { background: var(--color-accent); border-color: var(--color-accent); box-shadow: 0 14px 36px -10px var(--color-accent); }
+.btn:active { transform: translateY(1px); }
+
+/* Sections arrive as they scroll in (content is visible without this) */
+.pop-in { animation: popin 0.7s var(--ease-out) both; animation-delay: calc(var(--d, 0) * 70ms); }
+@keyframes popin { from { opacity: 0; transform: translateY(28px) scale(0.985); } }
+
+/* Project panels: each takes its app's colour, lights under the pointer */
+.panel { position: relative; --pc: var(--color-accent); }
+.panel[data-p="loremark"] { --pc: var(--color-loremark); } .panel[data-p="keyify"] { --pc: var(--color-keyify); } .panel[data-p="memoize"] { --pc: var(--color-memoize); }
+.panel > * { position: relative; z-index: 1; }
+.panel::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: var(--space-3xs); background: var(--pc); transform: scaleX(0); transform-origin: left; transition: transform var(--dur-long) var(--ease-out); z-index: 2; }
+.panel:hover::before { transform: scaleX(1); }
+.panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity var(--dur-long) var(--ease-out); background: radial-gradient(26rem circle at var(--mx, 50%) var(--my, 0%), color-mix(in oklab, var(--pc) 16%, transparent), transparent 62%); }
+.panel:hover::after { opacity: 1; }
+.panel .role { color: var(--pc); }
+.panel h3 { transition: color var(--dur-short) var(--ease-out); }
+.panel:hover h3 { color: var(--pc); }
+.panel-head img { transition: transform var(--dur-long) var(--ease-out); }
+.panel:hover .panel-head img { transform: rotate(-6deg) scale(1.1); }
+.lead-art { overflow: hidden; }
+.lead-art img { transition: transform 1.4s var(--ease-out); }
+.lead-art:hover img { transform: scale(1.04); }
+.stack li { transition: transform var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out); }
+.stack li:hover { transform: translateY(-2px); border-color: var(--pc, var(--color-accent)); color: var(--color-ink); }
+.repo a { color: var(--pc); text-decoration-color: color-mix(in oklab, var(--pc) 45%, transparent); }
+
+.readings .reading--lead { color: var(--color-loremark); }
+
+/* Keyify: the default keybinds press themselves, one row at a time */
+.binds tbody kbd { animation: keypress 8s var(--ease-out) infinite; animation-delay: calc(var(--r, 0) * 1.6s); }
+.binds tbody tr:nth-child(2) { --r: 1; } .binds tbody tr:nth-child(3) { --r: 2; } .binds tbody tr:nth-child(4) { --r: 3; } .binds tbody tr:nth-child(5) { --r: 4; }
+.binds:hover kbd { animation-play-state: paused; }
+@keyframes keypress {
+  0%, 2% { background: var(--color-paper-3); color: var(--color-ink); border-color: var(--color-rule-2); transform: none; }
+  4%, 15% { background: var(--color-keyify); color: var(--color-accent-ink); border-color: var(--color-keyify); transform: translateY(2px); }
+  19%, 100% { background: var(--color-paper-3); color: var(--color-ink); border-color: var(--color-rule-2); transform: none; }
+}
+
+.row h3, .skills dt { transition: color var(--dur-short) var(--ease-out); }
+.row:hover h3 { color: var(--color-accent); }
+.skills > div:hover dt { color: var(--color-accent); }
+
+/* A small penguin walks the footer line: a nod to Teamfight Tactics, like the hexes behind the name */
+.site-foot { position: relative; }
+.site-foot .pg-wrap { display: block; position: absolute; left: 0; right: 0; bottom: 100%; pointer-events: none; }
+.pg-track { position: relative; height: 3rem; container-type: inline-size; }
+.penguin { position: absolute; left: 0; bottom: 0; width: 3rem; height: 3rem; padding: 0; border: 0; background: none; cursor: pointer; pointer-events: auto; border-radius: var(--radius-card); animation: walk 26s linear infinite alternate; }
+.penguin:hover, .penguin:focus-visible, .penguin.said { animation-play-state: paused; }
+.penguin svg { width: 100%; height: 100%; transform-origin: 50% 100%; animation: waddle 0.45s var(--ease-in-out) infinite alternate; }
+.penguin:hover svg, .penguin:focus-visible svg { animation-play-state: paused; }
+.penguin.hop svg { animation: hop 0.6s var(--ease-out); }
+@keyframes walk { to { transform: translateX(calc(100cqw - 3rem)); } }
+@keyframes waddle { from { transform: rotate(-7deg); } to { transform: rotate(7deg); } }
+@keyframes hop { 0%, 100% { transform: translateY(0) scale(1); } 40% { transform: translateY(-18px) scale(1.06, 0.96); } 70% { transform: translateY(0) scale(0.96, 1.05); } }
+.pg-body, .pg-flip { fill: var(--color-rule-2); }
+.pg-belly { fill: var(--color-ink); }
+.pg-eye { fill: var(--color-paper-3); }
+.pg-beak, .pg-foot { fill: var(--color-beak); }
+.pg-say { position: absolute; left: 50%; bottom: calc(100% + var(--space-xs)); transform: translate(-50%, 6px); white-space: nowrap; padding: var(--space-xs) var(--space-sm); background: var(--color-paper-2); color: var(--color-ink); border: var(--rule-hair) solid var(--color-rule-2); border-radius: var(--radius-pill); font-size: var(--text-sm); opacity: 0; transition: opacity var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out); }
+.pg-say b { color: var(--color-accent); font-weight: 500; letter-spacing: 0.1em; margin-right: var(--space-2xs); }
+.pg-track:has(.penguin:hover) .pg-say, .pg-track:has(.penguin:focus-visible) .pg-say, .pg-track:has(.penguin.said) .pg-say { opacity: 1; transform: translate(-50%, 0); }
+</style>
+</head>
+<body>
+<!--page-->
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head" id="top">
+  <div class="container">
+    <div class="bar">
+      <a class="wordmark" href="#top">Benjamin Zeng</a>
+      <nav aria-label="Sections">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+      </nav>
+      <span class="progress" aria-hidden="true"></span>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="glow" aria-hidden="true"><span></span><span></span><canvas class="stars"></canvas></div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h1>Benjamin Zeng</h1>
+        <p class="lead">Computer science student at the University of Washington.<span class="builds">I build <span class="rotator" data-words="mobile apps|desktop tools|AI-powered apps">mobile apps</span><span class="caret" aria-hidden="true"></span></span></p>
+        <div class="actions">
+          <a class="btn btn--primary" href="#projects">See my projects</a>
+          <a class="btn btn--linkedin" href="https://www.linkedin.com/in/bennyxzeng/">LinkedIn</a>
+        </div>
+      </div>
+      <dl class="record" aria-label="At a glance">
+        <div><dt>Degree</dt><dd>B.S. in Computer Science</dd></div>
+        <div><dt>School</dt><dd>University of Washington</dd></div>
+        <div><dt>Graduating</dt><dd class="measured">June 2027</dd></div>
+        <div><dt>Based in</dt><dd>Seattle, WA</dd></div>
+        <div><dt>Focus</dt><dd>Mobile apps, full-stack development, applied AI</dd></div>
+        <div><dt>Builds with</dt><dd>Flutter, Dart, Python, Java</dd></div>
+        <div><dt>GitHub</dt><dd class="links"><a class="prose-link" href="https://github.com/bennyxzeng">github.com/bennyxzeng</a></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="panels">
+        <figure class="lead-art">
+          <img src="img/loremark.jpg" srcset="img/loremark-700.jpg 700w, img/loremark.jpg 1400w" sizes="(max-width: 40rem) 100vw, 1312px" width="1400" height="467" fetchpriority="high" alt="Loremark banner: the app’s logo and the tagline Your Story, Your Pace, beside an illustrated reader in a library.">
+        </figure>
+
+        <article class="panel" data-p="loremark">
+          <div>
+            <h3>Loremark</h3>
+            <p class="tagline">A spoiler-free reading companion for Android and iOS</p>
+          </div>
+          <p>Loremark helps readers keep track of long, complex books. It writes recaps, answers questions, and maps how characters relate, using only the chapters the reader has finished.</p>
+          <ul class="points">
+            <li>Led the team that built one Flutter app for both platforms, now in beta with EPUB reading, notes and highlights, search, a Story Map, and an AI chat</li>
+            <li>Built an on-device AI pipeline that grows each book’s story model chapter by chapter and checks every model response against a schema, so spoilers and corrupted data never reach the reader</li>
+            <li>Added note-taking and highlighting on the Readium EPUB engine, and tuned text processing to handle very long books quickly</li>
+            <li>Runs with no backend: the app calls OpenAI or DeepSeek directly with the reader’s own key, kept in the phone’s secure storage</li>
+          </ul>
+          <ul class="stack" aria-label="Built with">
+            <li>Flutter</li><li>Dart</li><li>Readium</li><li>OpenAI API</li><li>DeepSeek API</li><li>GitHub Actions</li>
+          </ul>
+          <p class="repo"><a class="prose-link" href="https://github.com/bennyxzeng/Loremark">View Loremark on GitHub</a></p>
+        </article>
+
+        <dl class="readings" aria-label="Loremark in figures">
+          <div><dt class="reading reading--lead" data-count="500000" data-suffix="+">500,000+</dt><dd>words of book text extracted in under 0.2 s</dd></div>
+          <div><dt class="reading">6</dt><dd>people on the team I led</dd></div>
+          <div><dt class="reading">0</dt><dd>backend servers</dd></div>
+        </dl>
+
+        <article class="panel" data-p="keyify">
+          <div class="panel-head">
+            <img src="img/keyify.png" width="192" height="192" alt="">
+            <div>
+              <h3>Keyify</h3>
+              <p class="tagline">Global Spotify hotkeys for Windows</p>
+            </div>
+          </div>
+          <p>A background app that controls Spotify from anywhere on the desktop, in under a second and without switching windows.</p>
+          <ul class="points">
+            <li>7 global hotkeys, all rebindable, with settings and Spotify sign-in (OAuth) that persist across restarts</li>
+            <li>Lives in the system tray, with options to start on boot and start minimized</li>
+            <li>Compiled to a standalone .exe with Nuitka, with releases built automatically by GitHub Actions</li>
+          </ul>
+          <table class="binds">
+            <thead><tr><th scope="col">Default keybind</th><th scope="col">Action</th></tr></thead>
+            <tbody>
+              <tr><td><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>Space</kbd></td><td>Play or pause</td></tr>
+              <tr><td><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>←</kbd><kbd>→</kbd></td><td>Previous or next track</td></tr>
+              <tr><td><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>↑</kbd><kbd>↓</kbd></td><td>Volume up or down</td></tr>
+              <tr><td><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>S</kbd></td><td>Shuffle</td></tr>
+              <tr><td><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>R</kbd></td><td>Repeat</td></tr>
+            </tbody>
+          </table>
+          <ul class="stack" aria-label="Built with">
+            <li>Python</li><li>Spotify Web API</li><li>Tkinter</li><li>Nuitka</li><li>GitHub Actions</li>
+          </ul>
+          <p class="repo"><a class="prose-link" href="https://github.com/bennyxzeng/Keyify">View Keyify on GitHub</a></p>
+        </article>
+
+        <article class="panel" data-p="memoize">
+          <div class="panel-head">
+            <img src="img/memoize.png" width="192" height="192" alt="">
+            <div>
+              <h3>Memoize</h3>
+              <p class="tagline">A flashcard app for Android and iOS</p>
+            </div>
+          </div>
+          <p>A mobile app for making, organizing, and practicing flashcard decks, built with one teammate.</p>
+          <ul class="points">
+            <li>Switches the whole interface between English, Spanish, and Chinese while the app is running</li>
+            <li>Stores decks, cards, and definitions on the device in a Drift (SQLite) database</li>
+            <li>Suggests definitions from a dictionary API so new cards take less typing</li>
+            <li>Practice mode uses gestures: swipe between cards, long-press for a hint, double-tap to skip, shake to shuffle</li>
+            <li>Includes light and dark themes, undo for deletions, and screen-reader labels throughout</li>
+          </ul>
+          <ul class="stack" aria-label="Built with">
+            <li>Flutter</li><li>Dart</li><li>Drift</li><li>Provider</li><li>Dictionary API</li>
+          </ul>
+          <p class="repo"><a class="prose-link" href="https://github.com/bennyxzeng/memoize">View Memoize on GitHub</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="container split">
+      <h2>Experience</h2>
+      <div class="rows">
+        <div class="row">
+          <div class="row-head">
+            <div class="row-title"><img src="img/bchacks.png" width="192" height="192" alt=""><h3>Leadership Staff Member, BC Hacks</h3></div>
+            <span class="when">May to June 2024</span>
+          </div>
+          <p class="sub">Bellevue College, Bellevue, WA</p>
+          <ul class="points">
+            <li>Helped run a student-led hackathon for 160+ attendees, 15+ mentors, and 5+ judges</li>
+            <li>Ran communications on Discord, Reddit, and Devpost so participants had timely updates and clear instructions</li>
+            <li>Coordinated submissions and presentations with the leadership team so every project met its deadline</li>
+            <li>Resolved technical problems for participants, staff, and volunteers during the event</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="education">
+    <div class="container split">
+      <h2>Education</h2>
+      <div class="rows">
+        <div class="row">
+          <div class="row-head">
+            <h3>University of Washington</h3>
+            <span class="when">Expected June 2027</span>
+          </div>
+          <p class="sub">B.S. in Computer Science, Seattle, WA</p>
+          <p>Coursework: Hardware and Software Interface, Data Structures and Parallelism, Software Design and Implementation, Discrete Math, Probability and Statistics, Interactive Programming.</p>
+        </div>
+        <div class="row">
+          <div class="row-head">
+            <h3>Bellevue College</h3>
+            <span class="when">Sept. 2021 to Dec. 2024</span>
+          </div>
+          <p class="sub">Associate in Arts and Sciences, conferred June 2023, GPA 3.95</p>
+          <p>Coursework: Linear Algebra, Data Structures and Algorithms, Object-Oriented Programming.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="container split">
+      <h2>Skills</h2>
+      <dl class="skills rows">
+        <div><dt>Languages</dt><dd>Java, Python, Dart, C/C++, SQL, HTML, CSS</dd></div>
+        <div><dt>Mobile and UI</dt><dd>Flutter, Drift (SQLite), Provider, Readium, Localization, Tkinter</dd></div>
+        <div><dt>AI and APIs</dt><dd>OpenAI API, DeepSeek API, Spotify Web API, OAuth, REST APIs</dd></div>
+        <div><dt>Tools</dt><dd>Git, GitHub, GitHub Actions, Nuitka, LaTeX, Microsoft Office</dd></div>
+        <div><dt>Spoken</dt><dd>English, Cantonese</dd></div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="container pg-wrap">
+    <div class="pg-track">
+      <span class="pg-say" role="status"><b aria-hidden="true">★★★</b>In my free time, I play Teamfight Tactics.</span>
+      <button class="penguin" type="button" id="penguin" aria-label="A penguin, a nod to Teamfight Tactics. Press to make it hop.">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <ellipse class="pg-foot" cx="18" cy="44.5" rx="6" ry="2.6"/>
+          <ellipse class="pg-foot" cx="30" cy="44.5" rx="6" ry="2.6"/>
+          <path class="pg-flip" d="M10 21c-5 4-6 10-4 15 3-2 6-6 7-11z"/>
+          <path class="pg-flip" d="M38 21c5 4 6 10 4 15-3-2-6-6-7-11z"/>
+          <ellipse class="pg-body" cx="24" cy="26" rx="15" ry="18"/>
+          <ellipse class="pg-belly" cx="24" cy="29.5" rx="10.5" ry="13.5"/>
+          <circle class="pg-eye" cx="19.5" cy="20" r="2"/>
+          <circle class="pg-eye" cx="28.5" cy="20" r="2"/>
+          <path class="pg-beak" d="M20.5 23.5h7l-3.5 4.5z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="container">
+    <span>Benjamin Zeng, Seattle, WA</span>
+    <ul>
+      <li><a class="prose-link" href="https://github.com/bennyxzeng">github.com/bennyxzeng</a></li>
+      <li><a class="prose-link" href="https://www.linkedin.com/in/bennyxzeng/">linkedin.com/in/bennyxzeng</a></li>
+    </ul>
+  </div>
+</footer>
+<script>
+(function () {
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var doc = document.documentElement;
+
+  // Scroll progress and the current section in the nav
+  var links = [].slice.call(document.querySelectorAll('.bar nav a'));
+  var secs = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  var bar = document.querySelector('.progress');
+  var ticking = false;
+  function update() {
+    ticking = false;
+    var max = doc.scrollHeight - window.innerHeight;
+    var p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+    if (bar) bar.style.transform = 'scaleX(' + p + ')';
+    var y = window.innerHeight * 0.35, cur = -1;
+    secs.forEach(function (s, i) { if (s && s.getBoundingClientRect().top <= y) cur = i; });
+    links.forEach(function (a, i) { if (i === cur) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
+  }
+  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
+
+  // Panels light under the pointer
+  [].forEach.call(document.querySelectorAll('.panel'), function (p) {
+    p.addEventListener('pointermove', function (e) {
+      var r = p.getBoundingClientRect();
+      p.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      p.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  // Drifting stars behind the name
+  var cv = document.querySelector('.stars');
+  if (cv && cv.getContext) {
+    var ctx = cv.getContext('2d'), stars = [], W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var starsOn = false, starsSeen = true, lastT = 0;
+    var cs = getComputedStyle(doc);
+    var cols = ['--color-ink', '--color-ink', '--color-ink', '--color-accent', '--color-cool'].map(function (n) { return cs.getPropertyValue(n).trim(); });
+    var sizeStars = function () {
+      var r = cv.getBoundingClientRect();
+      W = r.width; H = r.height; cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var n = Math.round(Math.min(120, (W * H) / 8500));
+      stars = [];
+      for (var i = 0; i < n; i++) stars.push({ x: Math.random() * W, y: Math.random() * H, r: 0.5 + Math.random() * 1.2, c: cols[Math.floor(Math.random() * cols.length)], p: Math.random() * 6.283, s: 0.5 + Math.random() * 1.3, vx: -(2 + Math.random() * 5), vy: -(1 + Math.random() * 3) });
+    };
+    var drawStars = function (t) {
+      ctx.clearRect(0, 0, W, H);
+      for (var i = 0; i < stars.length; i++) {
+        var s = stars[i];
+        ctx.globalAlpha = 0.2 + 0.6 * (0.5 + 0.5 * Math.sin(s.p + t * 0.001 * s.s));
+        ctx.fillStyle = s.c;
+        ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, 6.283); ctx.fill();
+      }
+    };
+    var starFrame = function (t) {
+      if (!starsOn) return;
+      var dt = lastT ? Math.min(0.05, (t - lastT) / 1000) : 0; lastT = t;
+      for (var i = 0; i < stars.length; i++) {
+        var s = stars[i]; s.x += s.vx * dt; s.y += s.vy * dt;
+        if (s.x < -4) s.x = W + 4; if (s.y < -4) s.y = H + 4;
+      }
+      drawStars(t);
+      requestAnimationFrame(starFrame);
+    };
+    var setStars = function () {
+      var want = !reduce && starsSeen && !document.hidden;
+      if (want && !starsOn) { starsOn = true; lastT = 0; requestAnimationFrame(starFrame); }
+      else if (!want) starsOn = false;
+    };
+    sizeStars(); drawStars(0);
+    window.addEventListener('resize', function () { sizeStars(); drawStars(0); });
+    document.addEventListener('visibilitychange', setStars);
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { starsSeen = en[0].isIntersecting; setStars(); }).observe(cv);
+    setStars();
+  }
+
+  // The footer penguin hops and says its line when pressed
+  var pg = document.getElementById('penguin'), pgTimer;
+  if (pg) pg.addEventListener('click', function () {
+    pg.classList.remove('hop'); void pg.offsetWidth; pg.classList.add('hop', 'said');
+    clearTimeout(pgTimer); pgTimer = setTimeout(function () { pg.classList.remove('hop', 'said'); pg.blur(); }, 3200);
+  });
+
+  if (reduce) return;
+
+  // Sections arrive as they scroll in; the lead figure counts up
+  if ('IntersectionObserver' in window) {
+    var targets = [].slice.call(document.querySelectorAll('.section h2, .panels > *, .row, .skills > div'));
+    targets.forEach(function (el) {
+      var sibs = [].slice.call(el.parentNode.children);
+      el.style.setProperty('--d', Math.min(sibs.indexOf(el), 5));
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        io.unobserve(en.target);
+        en.target.classList.add('pop-in');
+        var fig = en.target.querySelector && en.target.querySelector('[data-count]');
+        if (fig) countUp(fig);
+      });
+    }, { threshold: 0 });
+    targets.forEach(function (el) { io.observe(el); });
+  }
+  function countUp(el) {
+    var end = parseInt(el.getAttribute('data-count'), 10), suffix = el.getAttribute('data-suffix') || '';
+    var t0 = null, dur = 1600;
+    function step(t) {
+      if (t0 === null) t0 = t;
+      var k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 4);
+      el.textContent = Math.round(end * e).toLocaleString('en-US') + (k === 1 ? suffix : '');
+      if (k < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  // The hero line types out what I build
+  var rot = document.querySelector('.rotator');
+  if (rot) {
+    var words = (rot.getAttribute('data-words') || '').split('|'), wi = 0;
+    var type = function (word, i) {
+      rot.textContent = word.slice(0, i);
+      if (i < word.length) setTimeout(function () { type(word, i + 1); }, 70);
+      else setTimeout(function () { erase(word, word.length); }, 1900);
+    };
+    var erase = function (word, i) {
+      rot.textContent = word.slice(0, i);
+      if (i > 0) setTimeout(function () { erase(word, i - 1); }, 35);
+      else { wi = (wi + 1) % words.length; setTimeout(function () { type(words[wi], 1); }, 250); }
+    };
+    if (words.length > 1) setTimeout(function () { erase(words[0], words[0].length); }, 2600);
+  }
+})();
+</script>
+</body>
+</html>
