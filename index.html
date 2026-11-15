@@ -282,7 +282,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 <!--page-->
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="site-head" id="top">
+<header class="site-head">
   <div class="container">
     <div class="bar">
       <a class="wordmark" href="#top">Benjamin Zeng</a>
@@ -517,6 +517,13 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
   update();
+
+  // The name in the top bar goes back to the top of the page
+  var home = document.querySelector('.wordmark');
+  if (home) home.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+  });
 
   // Panels light under the pointer
   [].forEach.call(document.querySelectorAll('.panel'), function (p) {
